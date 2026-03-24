@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 
 
 export const metadata: Metadata = {
-  title: "Journey | Charvex Global",
+  title: "Journey | Charvex Global LLP",
   description:
-    "Explore the Journey of Charvex Global — milestones, partnerships, and growth shaping our IT excellence.",
+    "Explore the Journey of Charvex Global LLP — milestones, partnerships, and growth shaping our IT excellence.",
   icons: {
     icon: "/logo.png",
   },

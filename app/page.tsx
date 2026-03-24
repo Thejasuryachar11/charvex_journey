@@ -56,22 +56,30 @@ const timelineData = [
     description:
       "Expanded our team further by welcoming 50 additional interns, accelerating growth and operational capacity.",
   },
+  {
+  "date": "17th March 2026",
+  "title": "Charvex Global LLP Incorporated",
+  "description": "Charvex Global LLP was officially incorporated with a bold vision to redefine IT consulting and deliver enterprise-grade technology solutions.",
+  "documents": [
+    {
+      "name": "Incorporation Certificate",
+      "type": "pdf",
+      "file": "/llpin.pdf"
+    }
+  ]
+  }
 ]
 
 export default function JourneyPage() {
   return (
     <>
-      {/* ================= NAVBAR ================= */}
+      {/* NAVBAR */}
       <nav className="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           
-          {/* Logo + Brand */}
-          <a
-            href="https://www.charvexglobal.com/"
-            className="flex items-center gap-3"
-          >
+          <a href="/" className="flex items-center gap-3">
             <Image
-              src="/logo.png"   // Make sure logo.png is inside public folder
+              src="/logo.png"
               alt="Charvex Logo"
               width={40}
               height={40}
@@ -81,46 +89,31 @@ export default function JourneyPage() {
             </span>
           </a>
 
-          {/* Menu */}
-          <div className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
-            <a href="https://www.charvexglobal.com/" className="hover:text-[#FF6B00] transition">
-              Home
-            </a>
-            <a href="https://www.charvexglobal.com/about" className="hover:text-[#FF6B00] transition">
-              About
-            </a>
-            <a href="https://www.charvexglobal.com/services" className="hover:text-[#FF6B00] transition">
-              Services
-            </a>
-            <a href="https://www.charvexglobal.com/projects" className="hover:text-[#FF6B00] transition">
-              Projects
-            </a>
-            <a href="https://www.charvexglobal.com/careers" className="hover:text-[#FF6B00] transition">
-              Careers
-            </a>
-            <a href="https://www.charvexglobal.com/contact" className="hover:text-[#FF6B00] transition">
-              Contact
-            </a>
+          <div className="hidden md:flex gap-8 text-gray-700 font-medium">
+            <a href="/" className="hover:text-[#FF6B00]">Home</a>
+            <a href="/about" className="hover:text-[#FF6B00]">About</a>
+            <a href="/services" className="hover:text-[#FF6B00]">Services</a>
+            <a href="/projects" className="hover:text-[#FF6B00]">Projects</a>
+            <a href="/careers" className="hover:text-[#FF6B00]">Careers</a>
+            <a href="/contact" className="hover:text-[#FF6B00]">Contact</a>
           </div>
         </div>
       </nav>
 
-      {/* ================= MAIN CONTENT ================= */}
+      {/* MAIN */}
       <main className="min-h-screen bg-black text-white px-6 py-20 pt-32">
         
         <div className="max-w-5xl mx-auto text-center mb-20">
           <h1 className="text-5xl font-bold mb-4">
             Our <span className="text-[#FF6B00]">Journey</span>
           </h1>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            A timeline of growth, partnerships, and milestones that define
-            Charvex Global’s visionary path.
+          <p className="text-gray-400">
+            A timeline of growth and milestones.
           </p>
         </div>
 
         <div className="relative max-w-5xl mx-auto">
-          {/* Vertical Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-[3px] bg-[#FF6B00] h-full" />
+          <div className="absolute left-1/2 -translate-x-1/2 w-[3px] bg-[#FF6B00] h-full" />
 
           <div className="space-y-20">
             {timelineData.map((item, index) => (
@@ -137,32 +130,58 @@ export default function JourneyPage() {
                 }`}
               >
                 <div className="w-1/2">
-                  <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-xl shadow-lg">
+                  <div className="bg-white/5 border border-white/10 p-6 rounded-xl">
+                    
                     <span className="text-sm text-[#FF6B00] font-semibold">
                       {item.date}
                     </span>
+
                     <h3 className="text-xl font-bold mt-2 mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
+
+                    <p className="text-gray-400 text-sm">
                       {item.description}
                     </p>
 
+                    {/* WEBSITE LINK */}
                     {item.link && (
                       <a
                         href={item.link}
                         target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#FF6B00] text-sm mt-3 inline-block underline"
+                        className="text-[#FF6B00] text-sm mt-3 block underline"
                       >
                         Visit Website →
                       </a>
                     )}
+
+                    {/* PDF DOCUMENT */}
+                    {item.documents &&
+                      item.documents.map((doc, i) => (
+                        <div key={i} className="mt-3">
+                          
+                          {/* OPEN PDF */}
+                          <a
+                            href={doc.file}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#FF6B00] text-sm underline block"
+                          >
+                            📄 {doc.name}
+                          </a>
+
+                          {/* OPTIONAL EMBED PREVIEW */}
+                          <iframe
+                            src={doc.file}
+                            className="mt-3 w-full h-64 rounded-lg border border-white/10"
+                          />
+                        </div>
+                      ))}
                   </div>
                 </div>
 
-                {/* Circle Dot */}
-                <span className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#FF6B00] rounded-full border-4 border-black" />
+                {/* DOT */}
+                <span className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-[#FF6B00] rounded-full border-4 border-black" />
               </motion.div>
             ))}
           </div>
