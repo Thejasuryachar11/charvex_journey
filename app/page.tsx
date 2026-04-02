@@ -74,31 +74,32 @@ export default function JourneyPage() {
   return (
     <>
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          
-          <a href="/" className="flex items-center gap-3">
-            <Image
-              src="/logo.png"
-              alt="Charvex Logo"
-              width={40}
-              height={40}
-            />
-            <span className="text-2xl font-bold text-[#FF6B00]">
-              Charvex Global
-            </span>
-          </a>
+      {/* NAVBAR */}
+<nav className="fixed top-0 left-0 w-full bg-white shadow-sm z-50">
+  <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    
+    <a href="https://www.charvexglobal.com/" className="flex items-center gap-3">
+      <Image
+        src="/logo.png"
+        alt="Charvex Logo"
+        width={40}
+        height={40}
+      />
+      <span className="text-2xl font-bold text-[#FF6B00]">
+        Charvex Global LLP
+      </span>
+    </a>
 
-          <div className="hidden md:flex gap-8 text-gray-700 font-medium">
-            <a href="/" className="hover:text-[#FF6B00]">Home</a>
-            <a href="/about" className="hover:text-[#FF6B00]">About</a>
-            <a href="/services" className="hover:text-[#FF6B00]">Services</a>
-            <a href="/projects" className="hover:text-[#FF6B00]">Projects</a>
-            <a href="/careers" className="hover:text-[#FF6B00]">Careers</a>
-            <a href="/contact" className="hover:text-[#FF6B00]">Contact</a>
-          </div>
-        </div>
-      </nav>
+    <div className="hidden md:flex gap-8 text-gray-700 font-medium">
+      <a href="https://www.charvexglobal.com/" className="hover:text-[#FF6B00]">Home</a>
+      <a href="https://www.charvexglobal.com/about" className="hover:text-[#FF6B00]">About</a>
+      <a href="https://www.charvexglobal.com/services" className="hover:text-[#FF6B00]">Services</a>
+      <a href="https://www.charvexglobal.com/projects" className="hover:text-[#FF6B00]">Projects</a>
+      <a href="https://www.charvexglobal.com/careers" className="hover:text-[#FF6B00]">Careers</a>
+      <a href="https://www.charvexglobal.com/contact" className="hover:text-[#FF6B00]">Contact</a>
+    </div>
+  </div>
+</nav>
 
       {/* MAIN */}
       <main className="min-h-screen bg-black text-white px-6 py-20 pt-32">
